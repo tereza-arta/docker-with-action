@@ -1,4 +1,4 @@
-name: Docker build and push workflow...
+name: Docker build and push workflow
 
 on: workflow_dispatch
 
@@ -16,7 +16,7 @@ jobs:
                 username: ${{ secrets.DOCKER_USERNAME }}
                 password: ${{ secrets.DOCKER_PASSWORD }}
 
-            - name: Get tag and label for Docker
+            - name: Get tag for Docker Image
               id  : metadata
               uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38  
               with: 
@@ -28,7 +28,4 @@ jobs:
                 context: .
                 push: true
                 tags: ${{ steps.metadata.outputs.tags }}
-                #labels: ${{ steps.metadata.outputs.labels }}
-
-
-
+                
