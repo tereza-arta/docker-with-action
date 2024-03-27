@@ -30,4 +30,4 @@ jobs:
                 tags: ${{ steps.metadata.outputs.tags }}
               
             - name: Print tag of image
-              run : echo "${{ steps.metadata.outputs.tags }}"    
+              run : echo "${{ steps.metadata.outputs.id }}"    
